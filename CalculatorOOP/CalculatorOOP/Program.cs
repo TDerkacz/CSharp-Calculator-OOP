@@ -6,10 +6,10 @@ namespace CalculatorOOP
     {
         static void Main(string[] args)
         {
-            int firstNumber = 10;
-            int secondNumber = 20;
+            decimal firstNumber = 10;
+            decimal secondNumber = 20;
 
-            int result;
+            decimal result;
 
             // addition
             result = firstNumber + secondNumber;
