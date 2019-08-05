@@ -7,7 +7,7 @@ namespace CalculatorOOP
         static void Main(string[] args)
         {
             decimal firstNumber = 10;
-            decimal secondNumber = 20;
+            decimal secondNumber = 0;
 
             decimal result;
 
@@ -24,9 +24,16 @@ namespace CalculatorOOP
             Console.WriteLine($"Multiplying numbers : {result}");
 
             // division
-            result = firstNumber / secondNumber;
-            Console.WriteLine($"Dividing numbers : {result}");
-
+            if (secondNumber != 0)
+            {
+                result = firstNumber / secondNumber;
+                Console.WriteLine($"Dividing numbers : {result}");
+            }
+            else
+            {
+                Console.WriteLine("Cannot divide by zero!");
+            }
+                
             Console.ReadKey();
         }
     }
