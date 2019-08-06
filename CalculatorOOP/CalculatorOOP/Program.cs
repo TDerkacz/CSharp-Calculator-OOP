@@ -12,32 +12,39 @@ namespace CalculatorOOP
             Console.WriteLine();
 
             Console.WriteLine("Enter first number");
-            firstNumber = Convert.ToDecimal(Console.ReadLine());
+            var firstNumberFromConsole = Console.ReadLine();
 
             Console.WriteLine("Enter second number");
-            secondNumber = Convert.ToDecimal(Console.ReadLine());
+            var secondNumberFromConsole = Console.ReadLine();
 
-            // addition
-            result = firstNumber + secondNumber;
-            Console.WriteLine($"Adding numbers : {result}");
-
-            // subtraction
-            result = firstNumber - secondNumber;
-            Console.WriteLine($"Subtracting numbers : {result}");
-
-            // multiplication
-            result = firstNumber * secondNumber;
-            Console.WriteLine($"Multiplying numbers : {result}");
-
-            // division
-            if (secondNumber != 0)
+            if ((Decimal.TryParse(firstNumberFromConsole, out firstNumber)) && (Decimal.TryParse(secondNumberFromConsole, out secondNumber)))
             {
-                result = firstNumber / secondNumber;
-                Console.WriteLine($"Dividing numbers : {result}");
+                // addition
+                result = firstNumber + secondNumber;
+                Console.WriteLine($"Adding numbers : {result}");
+
+                // subtraction
+                result = firstNumber - secondNumber;
+                Console.WriteLine($"Subtracting numbers : {result}");
+
+                // multiplication
+                result = firstNumber * secondNumber;
+                Console.WriteLine($"Multiplying numbers : {result}");
+
+                // division
+                if (secondNumber != 0)
+                {
+                    result = firstNumber / secondNumber;
+                    Console.WriteLine($"Dividing numbers : {result}");
+                }
+                else
+                {
+                    Console.WriteLine("Cannot divide by zero!");
+                }
             }
             else
             {
-                Console.WriteLine("Cannot divide by zero!");
+                Console.WriteLine("Incorrect data, both must be numbers");
             }
 
             Console.WriteLine();
