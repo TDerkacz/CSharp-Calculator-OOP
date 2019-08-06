@@ -6,10 +6,16 @@ namespace CalculatorOOP
     {
         static void Main(string[] args)
         {
-            decimal firstNumber = 10;
-            decimal secondNumber = 0;
+            decimal firstNumber, secondNumber, result;
 
-            decimal result;
+            Console.WriteLine("==== This is simple Calculator with four operations ====");
+            Console.WriteLine();
+
+            Console.WriteLine("Enter first number");
+            firstNumber = Convert.ToDecimal(Console.ReadLine());
+
+            Console.WriteLine("Enter second number");
+            secondNumber = Convert.ToDecimal(Console.ReadLine());
 
             // addition
             result = firstNumber + secondNumber;
@@ -33,7 +39,9 @@ namespace CalculatorOOP
             {
                 Console.WriteLine("Cannot divide by zero!");
             }
-                
+
+            Console.WriteLine();
+            Console.WriteLine("Press any key to exit");
             Console.ReadKey();
         }
     }
