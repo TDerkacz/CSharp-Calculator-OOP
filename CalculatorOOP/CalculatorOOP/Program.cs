@@ -6,6 +6,8 @@ namespace CalculatorOOP
     {
         static void Main(string[] args)
         {
+            decimal? result = null;
+
             Console.WriteLine("==== This is simple Calculator with four operations ====");
             Console.WriteLine();
 
@@ -15,14 +17,33 @@ namespace CalculatorOOP
             Console.WriteLine("Enter second number");
             var secondNumberFromConsole = Console.ReadLine();
 
-            AddNumbers(firstNumberFromConsole, secondNumberFromConsole);
-            SubtractNumbers(firstNumberFromConsole, secondNumberFromConsole);
-            MultiplyNumbers(firstNumberFromConsole, secondNumberFromConsole);
-            DivideNumbers(firstNumberFromConsole, secondNumberFromConsole);
+            result = AddNumbers(firstNumberFromConsole, secondNumberFromConsole);
+            PrintResult(result, "Adding numbers");
+
+            result = SubtractNumbers(firstNumberFromConsole, secondNumberFromConsole);
+            PrintResult(result, "Subtracting numbers");
+
+            result = MultiplyNumbers(firstNumberFromConsole, secondNumberFromConsole);
+            PrintResult(result, "Multiplying numbers");
+
+            result = DivideNumbers(firstNumberFromConsole, secondNumberFromConsole);
+            PrintResult(result, "Dividing numbers");
 
             Console.WriteLine();
             Console.WriteLine("Press any key to exit");
             Console.ReadKey();
+        }
+
+        static void PrintResult(decimal? result, string ResultInfo)
+        {
+            if ((result == null) && (result == -1))
+            {
+                Console.WriteLine("Incorrect result");
+            }
+            else
+            {
+                Console.WriteLine($"{ResultInfo} : {result}");
+            }
         }
 
         static decimal? AddNumbers(string firstNumberFromConsole, string secondNumberFromConsole)
@@ -33,7 +54,6 @@ namespace CalculatorOOP
             if ((Decimal.TryParse(firstNumberFromConsole, out firstNumber)) && (Decimal.TryParse(secondNumberFromConsole, out secondNumber)))
             {
                 result = firstNumber + secondNumber;
-                Console.WriteLine($"Adding numbers : {result}");
             }
             else
             {
@@ -50,7 +70,6 @@ namespace CalculatorOOP
             if ((Decimal.TryParse(firstNumberFromConsole, out firstNumber)) && (Decimal.TryParse(secondNumberFromConsole, out secondNumber)))
             {             
                 result = firstNumber - secondNumber;
-                Console.WriteLine($"Subtracting numbers : {result}");
             }
             else
             {
@@ -67,7 +86,6 @@ namespace CalculatorOOP
             if ((Decimal.TryParse(firstNumberFromConsole, out firstNumber)) && (Decimal.TryParse(secondNumberFromConsole, out secondNumber)))
             {
                 result = firstNumber * secondNumber;
-                Console.WriteLine($"Multiplying numbers : {result}");
             }
             else
             {
@@ -86,7 +104,6 @@ namespace CalculatorOOP
                 if (secondNumber != 0)
                 {
                     result = firstNumber / secondNumber;
-                    Console.WriteLine($"Dividing numbers : {result}");
                 }
                 else
                 {
