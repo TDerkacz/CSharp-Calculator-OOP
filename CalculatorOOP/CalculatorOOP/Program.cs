@@ -6,8 +6,6 @@ namespace CalculatorOOP
     {
         static void Main(string[] args)
         {
-            decimal firstNumber, secondNumber, result;
-
             Console.WriteLine("==== This is simple Calculator with four operations ====");
             Console.WriteLine();
 
@@ -17,21 +15,74 @@ namespace CalculatorOOP
             Console.WriteLine("Enter second number");
             var secondNumberFromConsole = Console.ReadLine();
 
+            AddNumbers(firstNumberFromConsole, secondNumberFromConsole);
+            SubtractNumbers(firstNumberFromConsole, secondNumberFromConsole);
+            MultiplyNumbers(firstNumberFromConsole, secondNumberFromConsole);
+            DivideNumbers(firstNumberFromConsole, secondNumberFromConsole);
+
+            Console.WriteLine();
+            Console.WriteLine("Press any key to exit");
+            Console.ReadKey();
+        }
+
+        static decimal? AddNumbers(string firstNumberFromConsole, string secondNumberFromConsole)
+        {
+            decimal firstNumber, secondNumber;
+            decimal? result = null;
+
             if ((Decimal.TryParse(firstNumberFromConsole, out firstNumber)) && (Decimal.TryParse(secondNumberFromConsole, out secondNumber)))
             {
-                // addition
                 result = firstNumber + secondNumber;
                 Console.WriteLine($"Adding numbers : {result}");
+            }
+            else
+            {
+                Console.WriteLine("Incorrect data, both must be numbers");
+            }
+            return result;
+        }
 
-                // subtraction
+        static decimal? SubtractNumbers(string firstNumberFromConsole, string secondNumberFromConsole)
+        {
+            decimal firstNumber, secondNumber;
+            decimal? result = null;
+
+            if ((Decimal.TryParse(firstNumberFromConsole, out firstNumber)) && (Decimal.TryParse(secondNumberFromConsole, out secondNumber)))
+            {             
                 result = firstNumber - secondNumber;
                 Console.WriteLine($"Subtracting numbers : {result}");
+            }
+            else
+            {
+                Console.WriteLine("Incorrect data, both must be numbers");
+            }
+            return result;
+        }
 
-                // multiplication
+        static decimal? MultiplyNumbers(string firstNumberFromConsole, string secondNumberFromConsole)
+        {
+            decimal firstNumber, secondNumber;
+            decimal? result = null;
+
+            if ((Decimal.TryParse(firstNumberFromConsole, out firstNumber)) && (Decimal.TryParse(secondNumberFromConsole, out secondNumber)))
+            {
                 result = firstNumber * secondNumber;
                 Console.WriteLine($"Multiplying numbers : {result}");
+            }
+            else
+            {
+                Console.WriteLine("Incorrect data, both must be numbers");
+            }
+            return result;
+        }
 
-                // division
+        static decimal? DivideNumbers(string firstNumberFromConsole, string secondNumberFromConsole)
+        {
+            decimal firstNumber, secondNumber;
+            decimal? result = null;
+
+            if ((Decimal.TryParse(firstNumberFromConsole, out firstNumber)) && (Decimal.TryParse(secondNumberFromConsole, out secondNumber)))
+            {        
                 if (secondNumber != 0)
                 {
                     result = firstNumber / secondNumber;
@@ -46,10 +97,7 @@ namespace CalculatorOOP
             {
                 Console.WriteLine("Incorrect data, both must be numbers");
             }
-
-            Console.WriteLine();
-            Console.WriteLine("Press any key to exit");
-            Console.ReadKey();
+            return result;
         }
     }
 }
