@@ -6,10 +6,13 @@ namespace CalculatorOOP
 {
     public class Calculator
     {
+
+        private static decimal firstNumber, secondNumber;
+        private static decimal? result = null;
+
+
         public static decimal? AddNumbers(string firstNumberFromConsole, string secondNumberFromConsole)
         {
-            decimal firstNumber, secondNumber;
-            decimal? result = null;
 
             if ((Decimal.TryParse(firstNumberFromConsole, out firstNumber)) && (Decimal.TryParse(secondNumberFromConsole, out secondNumber)))
             {
@@ -24,9 +27,7 @@ namespace CalculatorOOP
 
         public static decimal? SubtractNumbers(string firstNumberFromConsole, string secondNumberFromConsole)
         {
-            decimal firstNumber, secondNumber;
-            decimal? result = null;
-
+           
             if ((Decimal.TryParse(firstNumberFromConsole, out firstNumber)) && (Decimal.TryParse(secondNumberFromConsole, out secondNumber)))
             {
                 result = firstNumber - secondNumber;
@@ -40,8 +41,6 @@ namespace CalculatorOOP
 
         public static decimal? MultiplyNumbers(string firstNumberFromConsole, string secondNumberFromConsole)
         {
-            decimal firstNumber, secondNumber;
-            decimal? result = null;
 
             if ((Decimal.TryParse(firstNumberFromConsole, out firstNumber)) && (Decimal.TryParse(secondNumberFromConsole, out secondNumber)))
             {
@@ -56,8 +55,6 @@ namespace CalculatorOOP
 
         public static decimal? DivideNumbers(string firstNumberFromConsole, string secondNumberFromConsole)
         {
-            decimal firstNumber, secondNumber;
-            decimal? result = null;
 
             if ((Decimal.TryParse(firstNumberFromConsole, out firstNumber)) && (Decimal.TryParse(secondNumberFromConsole, out secondNumber)))
             {
