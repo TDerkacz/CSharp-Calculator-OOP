@@ -12,14 +12,16 @@ namespace CalculatorOOP
 /// Interface can be used as a parameter in method
 /// so method will know from witch class to use
 /// 
+/// Interface members are always public by default - no modifier required
+/// 
 /// Abstract Class might contain
 /// - private or protected variables
 /// </summary>
 /// 
     public interface IFinancialCalculator
     {
-        void CalculateAnnuallyFinances();
-        void CalculateMonthlyFinances();
-        void CalculateWeeklyFinances();
+        void CalculateAnnuallyFinances(decimal input);
+        void CalculateMonthlyFinances(decimal input);
+        void CalculateWeeklyFinances(decimal input);
     }
 }

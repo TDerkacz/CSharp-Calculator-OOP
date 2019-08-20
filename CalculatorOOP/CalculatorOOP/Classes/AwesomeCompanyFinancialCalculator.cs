@@ -4,19 +4,21 @@ using System.Text;
 
 namespace CalculatorOOP.Classes
 {
-    public class CarCompanyFinancialCalculator : IFinancialCalculator
+    public class AwesomeCompanyFinancialCalculator : IFinancialCalculator
     {
-        public void CalculateAnnuallyFinances()
+        private const decimal AWESOME_COMPANY_FINANCE_FACTOR = 0.5m;
+
+        public void CalculateAnnuallyFinances(decimal input)
         {
             throw new NotImplementedException();
         }
 
-        public void CalculateMonthlyFinances()
+        public void CalculateMonthlyFinances(decimal input)
         {
             throw new NotImplementedException();
         }
 
-        public void CalculateWeeklyFinances()
+        public void CalculateWeeklyFinances(decimal input)
         {
             throw new NotImplementedException();
         }
