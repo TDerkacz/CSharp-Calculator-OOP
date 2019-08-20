@@ -8,19 +8,19 @@ namespace CalculatorOOP.Classes
     {
         private const decimal AWESOME_COMPANY_FINANCE_FACTOR = 0.5m;
 
-        public void CalculateAnnuallyFinances(decimal input)
+        public decimal CalculateAnnuallyFinances(decimal input)
         {
-            throw new NotImplementedException();
+            return input * 12 * AWESOME_COMPANY_FINANCE_FACTOR;
         }
 
-        public void CalculateMonthlyFinances(decimal input)
+        public decimal CalculateMonthlyFinances(decimal input)
         {
-            throw new NotImplementedException();
+            return input * AWESOME_COMPANY_FINANCE_FACTOR;
         }
 
-        public void CalculateWeeklyFinances(decimal input)
+        public decimal CalculateWeeklyFinances(decimal input)
         {
-            throw new NotImplementedException();
+            return input * 0.25m * AWESOME_COMPANY_FINANCE_FACTOR;
         }
     }
 }

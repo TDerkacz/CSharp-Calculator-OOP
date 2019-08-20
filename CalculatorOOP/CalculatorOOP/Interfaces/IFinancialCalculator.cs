@@ -20,8 +20,8 @@ namespace CalculatorOOP
 /// 
     public interface IFinancialCalculator
     {
-        void CalculateAnnuallyFinances(decimal input);
-        void CalculateMonthlyFinances(decimal input);
-        void CalculateWeeklyFinances(decimal input);
+        decimal CalculateAnnuallyFinances(decimal input);
+        decimal CalculateMonthlyFinances(decimal input);
+        decimal CalculateWeeklyFinances(decimal input);
     }
 }
