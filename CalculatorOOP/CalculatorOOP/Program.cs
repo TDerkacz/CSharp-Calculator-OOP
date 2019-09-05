@@ -30,7 +30,7 @@ namespace CalculatorOOP
 
 
             Console.WriteLine();
-            Console.WriteLine(">> two calculations methods - called with same name but operating on two objects ");
+            Console.WriteLine(">> one calculation method invoked with two classes using IFinancialCalculator as a type ");
             Console.WriteLine();
 
             CalculateFinances(obiFinancialCalc, 20000, 1500, 50);
@@ -40,30 +40,16 @@ namespace CalculatorOOP
             Console.ReadKey();
         }
 
-        
-
-        static void CalculateFinances(ObiFinancialCalc obiFinancialCalc, decimal annualInput, decimal monthlyInput, decimal weeklyInput)
+        static void CalculateFinances(IFinancialCalculator FinancialCalc, decimal annualInput, decimal monthlyInput, decimal weeklyInput)
         {
-            decimal annualResults = obiFinancialCalc.CalculateAnnualFinances(annualInput);
-            decimal monthlyResults = obiFinancialCalc.CalculateMonthlyFinances(monthlyInput);
-            decimal weeklyResults = obiFinancialCalc.CalculateWeeklyFinances(weeklyInput);
+            decimal annualResults = FinancialCalc.CalculateAnnualFinances(annualInput);
+            decimal monthlyResults = FinancialCalc.CalculateMonthlyFinances(monthlyInput);
+            decimal weeklyResults = FinancialCalc.CalculateWeeklyFinances(weeklyInput);
 
             Console.WriteLine($"OBI annual results = {annualResults}");
             Console.WriteLine($"OBI monthly results = {monthlyResults}");
             Console.WriteLine($"OBI weekly results = {weeklyResults}");
         }
-
-        static void CalculateFinances(TescoFinancialCalc tescoFinancialCalc, decimal annualInput, decimal monthlyInput, decimal weeklyInput)
-        {
-            decimal annualResults = tescoFinancialCalc.CalculateAnnualFinances(annualInput);
-            decimal monthlyResults = tescoFinancialCalc.CalculateMonthlyFinances(monthlyInput);
-            decimal weeklyResults = tescoFinancialCalc.CalculateWeeklyFinances(weeklyInput);
-
-            Console.WriteLine($"TESCO annual results = {annualResults}");
-            Console.WriteLine($"TESCO monthly results = {monthlyResults}");
-            Console.WriteLine($"TESCO weekly results = {weeklyResults}");
-        }
-
 
         static void PrintResult(decimal? result, string ResultInfo)
         {
